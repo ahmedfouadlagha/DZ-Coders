@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <div class="text-center">
+        <h2>{% block title %} {{ post['title'] }} {% endblock %}</h2> <br>
+        <img src={{ post['image']}} class="rounded" alt="..."> <br>
+        <span class="badge badge-success">{{ post['birth_date'] }}</span>
+        <span class="badge badge-danger">{{ post['date_of_death'] }}</span>
+        <p>{{ post['content'] }}</p>
+    </div>
+    <br>
+    
+{% endblock %}

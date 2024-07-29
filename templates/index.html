@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+        <h1>{% block title %} Welcome to The DZ History {% endblock %}</h1>
+        {% for post in posts %}
+            <a href="{{ url_for('post', post_id=post['id']) }}">
+                <h2>{{ post['title'] }}</h2>
+            </a>
+            
+            <span class="badge badge-primary">{{ post['created'] }}</span>
+            <a href="{{ url_for('edit', id=post['id']) }}">
+                <span class="badge badge-warning">Edit</span>
+            </a>
+            <hr>
+        {% endfor %}
+    {% endblock %}
+
+</body>
+</html>
